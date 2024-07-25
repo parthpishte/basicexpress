@@ -2,7 +2,10 @@ require('dotenv').config()
 const express = require('express')
 const app = express()
 //const port = 3000
-
+const jsoneg={
+    "name":"parth",
+    "city" : "ichalkaranji"
+}
 //       route callback->home
 app.get('/', (req, res) => {
   res.send('Hello World!')
@@ -17,10 +20,15 @@ app.get('/parth', (req, res) => {
   app.get('/hey', (req, res) => {
     res.send('Hello!')
   })
-  
+
   //       route callback->/hi
   app.get('/hi', (req, res) => {
     res.send('<h1>hi!</h1>')
+  })
+
+  //       route callback->/detail
+  app.get('/detail', (req, res) => {
+    res.json(jsoneg)
   })
 
 
